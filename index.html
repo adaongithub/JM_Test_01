@@ -13,7 +13,7 @@
         <style>
         #map {
             width: 1104px;
-            height: 674px;
+            height: 602px;
         }
         </style>
         <title>QGIS2web Test Project 01 - Leaflet</title>
@@ -53,7 +53,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[37.8047261806848,-122.4020654613269],[37.933923901937895,-122.13367740289442]]);
+        }).fitBounds([[37.834183025489885,-122.3878649204858],[37.908462236454376,-122.21504043291284]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -133,8 +133,10 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_BerkeleyParcels_1_0() {
-            return {
+        function style_BerkeleyParcels_1_0(feature) {
+            switch(String(feature.properties['round( use_code / 1000, 0)'])) {
+                case '0':
+                    return {
                 pane: 'pane_BerkeleyParcels_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -144,8 +146,175 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(133,182,111,1.0)',
+                fillColor: 'rgba(97,181,219,1.0)',
                 interactive: true,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_BerkeleyParcels_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(237,131,82,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_BerkeleyParcels_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(93,209,130,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_BerkeleyParcels_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(83,201,180,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '4':
+                    return {
+                pane: 'pane_BerkeleyParcels_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(66,96,231,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '5':
+                    return {
+                pane: 'pane_BerkeleyParcels_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(171,214,76,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '6':
+                    return {
+                pane: 'pane_BerkeleyParcels_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,36,220,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '7':
+                    return {
+                pane: 'pane_BerkeleyParcels_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(201,168,22,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '8':
+                    return {
+                pane: 'pane_BerkeleyParcels_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(67,233,30,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '9':
+                    return {
+                pane: 'pane_BerkeleyParcels_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(206,74,98,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '10':
+                    return {
+                pane: 'pane_BerkeleyParcels_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(123,80,214,1.0)',
+                interactive: true,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_BerkeleyParcels_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,0,0,1.0)',
+                interactive: true,
+            }
+                    break;
             }
         }
         map.createPane('pane_BerkeleyParcels_1');
@@ -443,7 +612,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'JM_locations<br /><table><tr><td style="text-align: center;"><img src="legend/JM_locations_2_BeachHouse0.png" /></td><td>Beach House</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_Church1.png" /></td><td>Church</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_Club2.png" /></td><td>Club</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_CommercialBldg3.png" /></td><td>Commercial Bldg</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_CommunityCenter4.png" /></td><td>Community Center</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_HearstFamilyResidence5.png" /></td><td>Hearst Family Residence</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_Hospital6.png" /></td><td>Hospital</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_PrivateResidence7.png" /></td><td>Private Residence</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_School8.png" /></td><td>School</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_YWCA9.png" /></td><td>YWCA</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_10.png" /></td><td></td></tr></table>': layer_JM_locations_2,'<img src="legend/BerkeleyParcels_1.png" /> Berkeley Parcels': layer_BerkeleyParcels_1,"OSM Standard": layer_OSMStandard_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'JM_locations<br /><table><tr><td style="text-align: center;"><img src="legend/JM_locations_2_BeachHouse0.png" /></td><td>Beach House</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_Church1.png" /></td><td>Church</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_Club2.png" /></td><td>Club</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_CommercialBldg3.png" /></td><td>Commercial Bldg</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_CommunityCenter4.png" /></td><td>Community Center</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_HearstFamilyResidence5.png" /></td><td>Hearst Family Residence</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_Hospital6.png" /></td><td>Hospital</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_PrivateResidence7.png" /></td><td>Private Residence</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_School8.png" /></td><td>School</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_YWCA9.png" /></td><td>YWCA</td></tr><tr><td style="text-align: center;"><img src="legend/JM_locations_2_10.png" /></td><td></td></tr></table>': layer_JM_locations_2,'Berkeley Parcels<br /><table><tr><td style="text-align: center;"><img src="legend/BerkeleyParcels_1_Exempt0.png" /></td><td>Exempt</td></tr><tr><td style="text-align: center;"><img src="legend/BerkeleyParcels_1_SingleFamilyResidential1.png" /></td><td>Single Family Residential</td></tr><tr><td style="text-align: center;"><img src="legend/BerkeleyParcels_1_MultipleResidential24Units2.png" /></td><td>Multiple Residential, 2-4 Units</td></tr><tr><td style="text-align: center;"><img src="legend/BerkeleyParcels_1_Commercial3.png" /></td><td>Commercial</td></tr><tr><td style="text-align: center;"><img src="legend/BerkeleyParcels_1_Industrial4.png" /></td><td>Industrial</td></tr><tr><td style="text-align: center;"><img src="legend/BerkeleyParcels_1_Rural5.png" /></td><td>Rural</td></tr><tr><td style="text-align: center;"><img src="legend/BerkeleyParcels_1_Institutional6.png" /></td><td>Institutional</td></tr><tr><td style="text-align: center;"><img src="legend/BerkeleyParcels_1_MultipleResidential5ormoreunits7.png" /></td><td>Multiple Residential, 5 or more units</td></tr><tr><td style="text-align: center;"><img src="legend/BerkeleyParcels_1_ImprovedCommercial8.png" /></td><td>Improved Commercial</td></tr><tr><td style="text-align: center;"><img src="legend/BerkeleyParcels_1_ImprovedCommercial9.png" /></td><td>Improved Commercial</td></tr><tr><td style="text-align: center;"><img src="legend/BerkeleyParcels_1_Other10.png" /></td><td>Other</td></tr><tr><td style="text-align: center;"><img src="legend/BerkeleyParcels_1_Othershouldnotappear11.png" /></td><td>Other-should not appear</td></tr></table>': layer_BerkeleyParcels_1,"OSM Standard": layer_OSMStandard_0,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
